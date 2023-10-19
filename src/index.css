@@ -2,54 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --bg-body: #070707;
+body {
+  background: #070707;
 }
-
-body{
-  background: var(--bg-body);
-}
-
-main{
+main {
   width: 100%;
   height: 100vh;
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.container{
+.container {
   width: 400px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow: hidden;
   position: relative;
 }
-.container--dark{
+.container--dark {
   background: rgb(23, 23, 24);
 }
-.container span{
+.container span {
   grid-column: span 4;
   overflow-x: auto;
 }
-.btn__darkMode{
+.btn__darkMode {
   position: absolute;
   top: 15px;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   padding-left: 12px;
 }
-.btn__darkMode__content{
+.btn__darkMode__content {
   padding: 5px;
   background: #ededed;
   border-radius: 50px;
   cursor: pointer;
 }
-.btn__darkMode__content--dark{
+.btn__darkMode__content--dark {
   background: #222;
 }
-.btn__darkMode__bg{
+.btn__darkMode__bg {
   border-radius: 50px;
   width: 50px;
   height: 20px;
@@ -57,21 +52,21 @@ main{
   align-items: center;
   background: #474647;
 }
-.btn__darkMode__bg button{
+.btn__darkMode__bg button {
   background: transparent;
 }
-.btn__darkMode__bg img{
+.btn__darkMode__bg img {
   padding: 5px;
   max-width: 25px;
   transition: transform .3s ease-out;
 }
-.btn__darkMode__img{
+.btn__darkMode__img {
   transform: translateX(0);
 }
-.btn__darkMode__img--dark{
+.btn__darkMode__img--dark {
   transform: translateX(25px);
 }
-.db{
+.db {
   position: absolute;
   top: -100%;
   left: 0;
@@ -80,25 +75,31 @@ main{
   opacity: 0;
   transition: .3s linear;
 }
-.db--active{
+.db--active {
   top: 0;
   opacity: 1;
 }
-.db__content{
+.db__content {
   width: 100%;
   position: relative;
 }
-.db__operations{
+.db__operations {
   max-height: 80%;
   overflow: auto;
 }
-.db__up{
+.db__up {
   position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.db__up img{
+.db__up img {
   max-width: 4rem;
+}
+
+@media screen and (max-width: 415px) {
+  .container {
+    width: 95%;
+  }
 }
